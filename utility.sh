@@ -46,11 +46,17 @@ if [ -f /etc/fstab ]; then
         echo "A file with the name /etc/fstab already exists. A backup will be taken and file replaced"
         cp /etc/fstab fstab.backup
         cp fstab /etc/fstab
-else
+
+## Check if volumes to be mounted for boot and / exist
+elif [ -d $f1 ] || [ -d $f2 ]; then
         echo "/etc/fstab will be installed"
         cp fstab /etc/fstab
 ## Uncomment the line below to mount fstab entries
         #mount -a
 ## Uncomment the line below to add root reserve of 10% for filesystem; adjust variables as needed
         #tune2fs -m10 $fs3
+        
+## Alert that volumes are not found
+else
+        echo "Volumes "$fs1" and "$fs2" not found on OS. Fstab will not be installed"
 fi
