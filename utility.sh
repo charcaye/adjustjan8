@@ -45,10 +45,10 @@ echo $fs4":"$export"    "$mount4"               "$type4"        defaults,"$optio
 if [ -f /etc/fstab ]; then
         echo "A file with the name /etc/fstab already exists. A backup will be taken and file replaced"
         cp /etc/fstab fstab.backup
-        cp fstab etc1fstab1
+        cp fstab /etc/fstab
 else
         echo "/etc/fstab will be installed"
-        cp fstab etc2fstab2
+        cp fstab /etc/fstab
 ## Uncomment the line below to mount fstab entries
         #mount -a
 ## Uncomment the line below to add root reserve of 10% for filesystem; adjust variables as needed
