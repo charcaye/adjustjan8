@@ -1,4 +1,4 @@
-#BASH Fstab Generator
+BASH Fstab Generator
 -----------------------------------
 This is a small bash script that will generate a /etc/fstab file based on a YAML file
 
